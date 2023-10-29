@@ -7,7 +7,7 @@
         "**/*": "prettier --write --ignore-unknown"
     },
     "scripts": {
-        "codegen": "graph codegen",
+        "codegen": "graph codegen ./src/subgraph.yaml --output-dir ./src/generated",
         "build": "graph build",
         "deploy": "graph deploy --node https://api.thegraph.com/deploy/ nft-transfers",
         "create-local": "graph create --node http://localhost:8020/ nft-transfers",
