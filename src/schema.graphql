@@ -4,8 +4,8 @@ type NftTransfer @entity(immutable: true) {
     operator: Bytes! # address
     from: Bytes! # address
     to: Bytes! # address
-    tokenId: [BigInt!] # uint256
-    quantity: [BigInt!] # uint256
+    tokenIds: [BigInt!] # uint256
+    quantities: [BigInt!] # uint256
     blockNumber: BigInt!
     blockTimestamp: BigInt!
     transactionHash: Bytes!

@@ -4,6 +4,12 @@ import {
 } from './generated/digidaigaku/ERC721'
 import { NftTransfer } from './generated/schema'
 
+/**
+ * Assembly Script:
+ * - No closures
+ * - No iterations (.entries(), .forEach(), for const of, ...)
+ */
+
 export function handleTransferBatch(event: TransferBatchEvent): void {
     const entity = new NftTransfer(
         event.transaction.hash.concatI32(event.logIndex.toI32()),
@@ -14,8 +20,8 @@ export function handleTransferBatch(event: TransferBatchEvent): void {
     entity.operator = event.params.operator
     entity.from = event.params.from
     entity.to = event.params.to
-    entity.tokenId = event.params.ids
-    entity.quantity = event.params.values
+    entity.tokenIds = event.params.ids
+    entity.quantities = event.params.values
 
     entity.blockNumber = event.block.number
     entity.blockTimestamp = event.block.timestamp
@@ -36,8 +42,8 @@ export function handleTransferSingle(event: TransferSingleEvent): void {
     entity.operator = event.params.operator
     entity.from = event.params.from
     entity.to = event.params.to
-    entity.tokenId = [event.params.id]
-    entity.quantity = [event.params.value]
+    entity.tokenIds = [event.params.id]
+    entity.quantities = [event.params.value]
 
     entity.blockNumber = event.block.number
     entity.blockTimestamp = event.block.timestamp
