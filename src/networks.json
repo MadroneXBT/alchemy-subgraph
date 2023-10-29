@@ -3,6 +3,10 @@
         "digidaigaku": {
             "address": "0xd1258db6ac08eb0e625b75b371c023da478e94a9",
             "startBlock": 15309200
+        },
+        "satoshi_gallery": {
+            "address": "0xb3307dca37a2b71df435a9789a7a98e2cb52f6f7",
+            "startBlock": 12129356
         }
     }
 }
