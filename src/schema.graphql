@@ -1,0 +1,13 @@
+type NftTransfer @entity(immutable: true) {
+    id: Bytes!
+    contractAddress: Bytes! # address
+    operator: Bytes! # address
+    from: Bytes! # address
+    to: Bytes! # address
+    tokenId: [BigInt!] # uint256
+    quantity: [BigInt!] # uint256
+    blockNumber: BigInt!
+    blockTimestamp: BigInt!
+    transactionHash: Bytes!
+    event: String!
+}
